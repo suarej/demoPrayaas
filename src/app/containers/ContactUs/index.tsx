@@ -1,59 +1,71 @@
 import React from "react";
 import { NavBar } from "../../components/navbar";
-import styled from 'styled-components';
+import styled from "styled-components";
 import tw from "twin.macro";
 import { Footer } from "../../components/footer";
 import { TopSection } from "../HomePage/topSection";
 import { ReachUs } from "./ReachUs";
 import { GoogleMaps } from "./gMap";
 
-const ContactContainer = styled.div`${tw`
+const ContactContainer = styled.div`
+  ${tw`
 w-full
+h-full
 flex
 flex-col
-items-center
 `}
 `;
 
 const Title = styled.h1`
-    ${tw`
+  ${tw`
         w-full
         text-center
         text-black
         text-xl
-        md:text-2xl
+        md:p-4
+        mt--8
+        // bg-blue-200
+        md:text-3xl
         font-medium
-        md:font-black
+        md:font-semibold
         md:leading-normal
     `};
 `;
 
 const WhatsappContainer = styled.div`
-    ${tw`
+  ${tw`
         flex
         flex-col
-        justify-between
-        md:w-1/2
         md:flex-row
-        
+        md:m-20
+        md:mt-2
     `}
 `;
 
+const NavContainer = styled.div`
+  ${tw`
+    items-center
+    md:mt--14
+    mt--10
+    flex
+    flex-col
+    // overflow-x-hidden
+    `}
+`;
 
 export function ContactUs() {
-    return (
-        <ContactContainer>
-            <NavBar />
-            <Title>
-                Contact Us!
-            </Title>
-            <WhatsappContainer>
-                <ReachUs/>
-                <GoogleMaps/>
-            </WhatsappContainer>
+  return (
+    <ContactContainer>
+      <NavContainer>
+        <NavBar />
+      </NavContainer>
+      <Title>Contact Us!</Title>
+      <WhatsappContainer>
+        <ReachUs />
+        <GoogleMaps />
+      </WhatsappContainer>
 
-            <Footer />
-
-        </ContactContainer>
-    )
+      <Footer />
+    </ContactContainer>
+  );
 }

@@ -15,6 +15,7 @@ const Container = styled.div`
         pb-3
         lg:pt-6
         lg:pb-6
+        bg-blue-50
     `};
 `;
 

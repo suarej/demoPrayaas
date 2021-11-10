@@ -11,6 +11,7 @@ flex
 flex-col
 items-center
 justify-center
+bg-blue-50
 `}
 `;
 

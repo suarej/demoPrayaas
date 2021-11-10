@@ -28,7 +28,7 @@ const StepsContainer = styled.div`
         justify-evenly
         flex-wrap
         // mt-7
-        lg:mt-16
+        lg:mt-4
     `};
 `;
 
@@ -44,12 +44,14 @@ const StepContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    height:16em;
-    // margin-left:-30px;
+    height:15em;
+
+    ${tw`
+    md:ml-16`};
 
     img {
-        width:16em;
-        height:16em;
+        width:15em;
+        height:15em;
         border-radius: 50%;
     }
 
@@ -64,17 +66,14 @@ const ImageContainer = styled.div`
     @media (min-width: ${SCREENS["2xl"]}) {
         height:25em;
         width: 25em;
-        margin-left:0;
     }
 `;
 
 const InfoContainer = styled.div`
     ${tw`
-        // md:w-1/2
         flex
         flex-col
-        // md:ml-6
-        2xl:ml-16
+        p-3
     `};
 `;
 

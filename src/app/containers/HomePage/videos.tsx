@@ -20,6 +20,8 @@ const CoursesContainer = styled.div`
         md:pl-0
         md:pr-0
         md:mt-10
+        // bg-red-100
+
 
     `};
 `;

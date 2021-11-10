@@ -30,13 +30,9 @@ export function HomePage () {
 
         <TopSection/>
         <Marginer direction="vertical" margin="4em"/>
-        
-        {/* <BookCard/> */}
-        {/* <Marginer direction="vertical" margin="10em"/> */}
         <CoursesOffered/>   
-        <Marginer direction="vertical" margin="8em"/>
+        <Marginer direction="vertical" margin="4em"/>
         <AboutUs/>
-        {/* <Marginer direction="vertical" margin="8em"/> */}
         <VideoSectionHomepage/>
         <Marginer direction="vertical" margin="5em"/>
 

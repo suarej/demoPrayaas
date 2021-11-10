@@ -6,6 +6,10 @@ import { Footer } from "../../components/footer";
 import { TopSection } from "../HomePage/topSection";
 import { allQueAndComponentArray } from "./allQueAnsArray";
 import { FeedbackAndAnswers } from "./feedbackAns";
+import { useMediaQuery } from "react-responsive";
+import { SCREENS } from "../../components/responsive";
+import * as Scroll from "react-scroll";
+import { Button } from "../../components/button";
 
 const PageContainer = styled.div`
   ${tw`
@@ -14,7 +18,7 @@ h-full
 flex
 flex-col
 items-center
-overflow-x-hidden
+// overflow-x-hidden
 `}
 `;
 
@@ -38,7 +42,7 @@ const QueContainer = styled.div`
 `;
 
 const QueDayContainer = styled.div`
-box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
 
   ${tw`
       // shadow-md
@@ -48,7 +52,6 @@ box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
       rounded-md
 `};
 `;
-
 
 const QueIndividualContainer = styled.div`
   ${tw`
@@ -81,13 +84,36 @@ const FeedBackContainer = styled.div`
   `};
 `;
 
+const ButtonContainer = styled.div`
+  ${tw`
+    w-full
+    text-center
+`};
+`;
+
 export function DAW() {
+  const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+
   const [showAns, setShowAns] = React.useState(false);
   const [day, setDay] = React.useState("");
+
+  var Element = Scroll.Element;
+  var scroller = Scroll.scroller;
 
   const handleShow = (el: any) => {
     setDay(el.Day);
     setShowAns(true);
+    isMobile &&
+      scroller.scrollTo("myScrollToElement", {
+        duration: 1500,
+        delay: 100,
+        smooth: true,
+        offset: 0,
+      });
+  };
+
+  const goToTop = () => {
+    Scroll.animateScroll.scrollToTop();
   };
 
   return (
@@ -97,24 +123,29 @@ export function DAW() {
         <QueContainer>
           {allQueAndComponentArray.map((el) => {
             return (
-              <QueDayContainer onClick={() => handleShow(el)}> 
-              <DayTitleContainer> 
+              <QueDayContainer onClick={() => handleShow(el)}>
+                <DayTitleContainer>{el.Day}</DayTitleContainer>
 
-                {el.Day}
-                </DayTitleContainer>
-
-                <QueIndividualContainer>
-                  {el.Question}
-                </QueIndividualContainer>
-                </QueDayContainer>
-
+                <QueIndividualContainer>{el.Question}</QueIndividualContainer>
+              </QueDayContainer>
             );
           })}
         </QueContainer>
+
         <FeedBackContainer>
-          {showAns && <FeedbackAndAnswers day={day} />}
+
+        <Element name="myScrollToElement">
+            {showAns && <FeedbackAndAnswers day={day} />}
+        </Element>
         </FeedBackContainer>
+
       </SectionContainer>
+
+      {isMobile && (
+        <ButtonContainer onClick={goToTop}>
+          <Button text="Back To Top" />
+        </ButtonContainer>
+      )}
 
       <Footer />
     </PageContainer>

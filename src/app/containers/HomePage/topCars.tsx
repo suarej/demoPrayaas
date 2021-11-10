@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Carousel, { Dots, slidesToShowPlugin, autoplayPlugin } from "@brainhubeu/react-carousel";
+import Carousel, {
+  Dots,
+  slidesToShowPlugin,
+  autoplayPlugin,
+} from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { useMediaQuery } from "react-responsive";
 import { SCREENS } from "../../components/responsive";
 import { CourseHomepage } from "../../components/courseHomepage";
-import Pareekshan2 from '../../../assets/images2/Pareekshan2.0.jpeg'
-import Pareekshan1 from '../../../assets/images2/Pareekshan1.0.jpeg'
-import EssayModule from '../../../assets/images2/EssayModuleNov21.jpg'
-
-
+import Pareekshan2 from "../../../assets/images2/Pareekshan2.0.jpeg";
+import Pareekshan1 from "../../../assets/images2/Pareekshan1.0.jpeg";
+import EssayModule from "../../../assets/images2/EssayModuleNov21.jpg";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -24,7 +26,8 @@ const TopCarsContainer = styled.div`
         pl-4
         md:pl-0
         md:pr-0
-        // md:mt-10
+        bg-blue-50
+        md:mt-7
     `};
 `;
 
@@ -88,7 +91,9 @@ export function CoursesHomepage() {
     />,
   ];
 
-  const numberOfDots = isMobile ? HomeCourses.length : Math.ceil(HomeCourses.length / 1.5);
+  const numberOfDots = isMobile
+    ? HomeCourses.length
+    : Math.ceil(HomeCourses.length / 1.5);
 
   return (
     <TopCarsContainer>
@@ -98,7 +103,7 @@ export function CoursesHomepage() {
           onChange={setCurrent}
           slides={HomeCourses}
           plugins={[
-            'centered',
+            "centered",
             "clickToChange",
             {
               resolve: slidesToShowPlugin,
@@ -106,14 +111,14 @@ export function CoursesHomepage() {
                 numberOfSlides: 2,
               },
             },
-            // { 
-            //   resolve: autoplayPlugin,
-            //   options: {
-            //     interval: 2000,
-            //   }
-            // }
+            {
+              resolve: autoplayPlugin,
+              options: {
+                interval: 2000,
+              }
+            }
           ]}
-          // animationSpeed={1000}
+          animationSpeed={1000}
           breakpoints={{
             640: {
               plugins: [

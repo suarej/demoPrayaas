@@ -10,8 +10,11 @@ const SectionContainer = styled.div`
   ${tw`
         w-full
         md:w-3/4
+        md:mt-5
         items-center
         justify-center
+        bg-blue-50
+        rounded-md
 `}
 `;
 
@@ -20,8 +23,7 @@ const ListContainer = styled.ul`
             flex
             flex-col
             bg-gray-50
-
-            mb-7
+            // mb-7
             list-none
             
         `};

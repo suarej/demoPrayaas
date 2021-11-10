@@ -56,6 +56,7 @@ const ModelAnswerEnglish = styled.div`
   rounded-md
   font-semibold
   border
+  text-white
 
   bg-red-500
     hover:bg-transparent

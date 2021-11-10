@@ -1,50 +1,54 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import tw from "twin.macro";
 import { PrelimLinks } from "./prelimslinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
-
-const SectionContainer = styled.div`${tw`
+const SectionContainer = styled.div`
+  ${tw`
 w-full
 flex
 flex-col
 items-center
+bg-blue-50
+mt-5
 `}
 `;
 
 const ListContainer = styled.ul`
-        ${tw`
-            w-3/4
-            flex
-            mb-7
-            list-none
-            shadow-md
+  ${tw`
+  flex
+  flex-col
+  md:w-full
+  md:flex-row
+  mb-7
+  list-none
         `};
 `;
 
 const NavItem = styled.li<{ menu?: any }>`
-    ${tw`
-        text-xs
-        text-blue-600
-        font-medium
-        mr-1
-        ml-1
-        pt-1
-        md: mr-20
-        md: ml-2
-        md: text-base
-        cursor-pointer
-        transition
-        duration-300
-        ease-in-out
-        hover:text-gray-500
+  ${tw`
+    md: w-1/12
+        
+    text-xs
+    text-blue-600
+    font-medium
+    mr-1
+    ml-1
+    md: mr-20
+    md: ml-2
+    md: text-base
+    cursor-pointer
+    transition
+    duration-300
+    ease-in-out
+    hover:text-gray-500
     `};
 `;
 
 const Title = styled.h1`
-    ${tw`
+  ${tw`
         w-full
         text-center
         text-black
@@ -59,7 +63,7 @@ const Title = styled.h1`
 `;
 
 const Heading = styled.h1`
-    ${tw`
+  ${tw`
         w-full
         md:w-1/2
         text-center
@@ -80,32 +84,55 @@ const StepIcon = styled.span`
     `};
 `;
 
-export function PrelimsPYQ() {
-    return (
-        <SectionContainer>
-            <Title> Civil Services (Preliminary) </Title>
+const StepContainer = styled.div`
+  ${tw`
+        flex
+        items-center
+        justify-center
+        whitespace-nowrap
+        transition-colors
+        hover:text-red-500
+        shadow-lg
 
-            {PrelimLinks.map((el) => {
-                return (
-                    <ListContainer>
-                        <Heading>
-                            {el.Year}
-                        </Heading>
-                        <StepIcon>
-                            <FontAwesomeIcon icon={faFilePdf} />
-                        </StepIcon>
-                        <NavItem>
-                            <a href={el.urlPaperI} target="_blank">  {el.headerI} </a>
-                        </NavItem>
-                        <StepIcon>
-                            <FontAwesomeIcon icon={faFilePdf} />
-                        </StepIcon>
-                        <NavItem>
-                            <a href={el.urlPaperII} target="_blank">  {el.headerII} </a>
-                        </NavItem>
-                    </ListContainer>
-                )
-            })}
-        </SectionContainer>
-    )
+    `};
+`;
+
+export function PrelimsPYQ() {
+  return (
+    <SectionContainer>
+      <Title> Civil Services (Preliminary) </Title>
+
+      {PrelimLinks.map((el) => {
+        return (
+          <ListContainer>
+            <Heading>{el.Year}</Heading>
+
+            <StepContainer>
+              <StepIcon>
+                <FontAwesomeIcon icon={faFilePdf} />
+              </StepIcon>
+              <NavItem>
+                <a href={el.urlPaperI} target="_blank">
+                  {" "}
+                  {el.headerI}{" "}
+                </a>
+              </NavItem>
+            </StepContainer>
+
+            <StepContainer>
+              <StepIcon>
+                <FontAwesomeIcon icon={faFilePdf} />
+              </StepIcon>
+              <NavItem>
+                <a href={el.urlPaperII} target="_blank">
+                  {" "}
+                  {el.headerII}{" "}
+                </a>
+              </NavItem>
+            </StepContainer>
+          </ListContainer>
+        );
+      })}
+    </SectionContainer>
+  );
 }

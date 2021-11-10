@@ -4,45 +4,58 @@ import tw from "twin.macro";
 import { Button } from "../../components/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+  faTelegramPlane,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelopeOpenText,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const SectionContainer = styled.div`
-    ${tw`
+  ${tw`
         flex
         flex-col
+        w-full
+        md:w-1/3
+        justify-center
     `};
 `;
 
 const ButtonsContainer = styled.div`
-    ${tw`
+  ${tw`
         flex
         flex-col
-        bg-gray-200
-        m-3
-        p-10
-        rounded-md
-        pb-4
+        bg-blue-50
+        rounded-lg
+        m-2
+        md:m-5
+        p-2
+        md:p-5
     `};
 `;
 
 const AdressContainer = styled.div`
-    ${tw`
+  ${tw`
         flex
         flex-col
-        m-3
-        p-10
-        bg-gray-200
+        bg-blue-50
+        rounded-lg
+        p-2
+        md:p-5
+        m-2
+        md:m-5
     `}
 `;
 
 const AdressText = styled.p`
-    ${tw`
-        // md:max-w-2xl
+  ${tw`
         text-sm
         md:text-base
         text-gray-500
-        font-normal
-        // mt-4
+        font-normal 
+        text-center
 
     `};
 `;
@@ -50,10 +63,19 @@ const AdressText = styled.p`
 const StepIcon = styled.span`
   ${tw`
         text-red-500
-        text-2xl
+        text-4xl
         text-center
         mb-2
     `};
+`;
+
+const IconNumberContainer = styled.div`
+  ${tw`
+        flex
+        text-center
+        justify-center
+        items-center
+`};
 `;
 
 const Whatsappicon = styled.span`
@@ -61,53 +83,90 @@ const Whatsappicon = styled.span`
         text-green-500
         text-5xl
         text-center
+        p-2
+    `};
+`;
+
+const NumberContainer = styled.span`
+  ${tw`
+        text-black
+        text-lg
+    `};
+`;
+
+const TelegramIcon = styled.span`
+  ${tw`
+        text-blue-400
+        text-5xl
+        text-center
+        p-2
+    `};
+`;
+
+const MailIcon = styled.span`
+  ${tw`
+        text-red-500
+        text-4xl
+        text-center
         mb-2
     `};
 `;
 
 const ButtonText = styled.p`
-    ${tw`
-        // md:max-w-2xl
+  ${tw`
         text-sm
         md:text-base
         text-gray-500
         font-normal
-        // mt-4
-
+        text-center
     `};
 `;
 
 export function ReachUs() {
-    return (
-        <SectionContainer>
-            <ButtonsContainer>
-                <Whatsappicon>
-                    <FontAwesomeIcon icon={faWhatsapp} />
-                </Whatsappicon>
-                <ButtonText>
-                    Reach via whatsapp ?
-                </ButtonText>
+  return (
+    <SectionContainer>
+      <ButtonsContainer>
+        <MailIcon>
+          <FontAwesomeIcon icon={faEnvelopeOpenText} />
+        </MailIcon>
+        <ButtonText>admin@prayaas.in</ButtonText>
+      </ButtonsContainer>
+      <ButtonsContainer>
+          <IconNumberContainer> 
+          <Whatsappicon>
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </Whatsappicon>
+        <NumberContainer>
+            +91 770 919 8275
+        </NumberContainer>
 
-            </ButtonsContainer>
-            <ButtonsContainer>
-                <StepIcon>
-                    <FontAwesomeIcon icon={faFilePdf} />
-                </StepIcon>
-                <ButtonText>
-                    Reach via ztelegram ?
-                </ButtonText>
 
-            </ButtonsContainer>
-            <AdressContainer>
-                <StepIcon>
-                    <FontAwesomeIcon icon={faFilePdf} />
-                </StepIcon>
-                <AdressText>
-                    Lorem asfasfb
-                </AdressText>
+              </IconNumberContainer>
+       
+        <ButtonText>Reach via Whatsapp ?</ButtonText>
+      </ButtonsContainer>
+      <ButtonsContainer>
+      <IconNumberContainer>
 
-            </AdressContainer>
+        <TelegramIcon>
+          <FontAwesomeIcon icon={faTelegramPlane} />
+        </TelegramIcon>
+        <NumberContainer>
+            +91 770 919 8275
+        </NumberContainer>
+              </IconNumberContainer>
 
-        </SectionContainer>
-    )
+        <ButtonText>Reach via Telegram ?</ButtonText>
+      </ButtonsContainer>
+      <AdressContainer>
+        <StepIcon>
+          <FontAwesomeIcon icon={faMapMarkerAlt} />
+        </StepIcon>
+        <AdressText>
+          At Pant-Pratinidhi Road, Behind Dnyan Prabodhini, Sadashiv Peth,
+          <br /> Pune- 411030
+        </AdressText>
+      </AdressContainer>
+    </SectionContainer>
+  );
 }
