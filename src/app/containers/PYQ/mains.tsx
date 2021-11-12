@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SectionContainer = styled.div`${tw`
 w-full
+max-w-screen-2xl
 flex
 flex-col
 items-center
@@ -97,6 +98,7 @@ const StepContainer = styled.div`
         transition-colors
         hover:text-red-500
         shadow-lg
+        m-1
 
     `};
 `;

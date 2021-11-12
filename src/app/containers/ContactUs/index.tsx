@@ -6,6 +6,7 @@ import { Footer } from "../../components/footer";
 import { TopSection } from "../HomePage/topSection";
 import { ReachUs } from "./ReachUs";
 import { GoogleMaps } from "./gMap";
+import { Marginer } from "../../components/marginer";
 
 const ContactContainer = styled.div`
   ${tw`
@@ -59,6 +60,8 @@ export function ContactUs() {
       <NavContainer>
         <NavBar />
       </NavContainer>
+      <Marginer direction="vertical" margin="2em"/>
+
       <Title>Contact Us!</Title>
       <WhatsappContainer>
         <ReachUs />

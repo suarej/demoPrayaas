@@ -59,8 +59,8 @@ const AnyReactComponent = (props: any) => {
 export function GoogleMaps() {
   const defaultProps = {
     center: {
-      lat: 18.51232,
-      lng: 73.84494,
+      lat: 18.416,
+      lng: 73.545 ,
     },
     zoom: 14,
     restriction: {
@@ -83,7 +83,7 @@ export function GoogleMaps() {
         defaultZoom={defaultProps.zoom}
         yesIWantToUseGoogleMapApiInternals
       >
-        <AnyReactComponent lat={18.51232} lng={73.84494} text="Prayaas" />
+        <AnyReactComponent lat={18.5115626} lng={73.8448766} text="Prayaas" />
       </GoogleMapReact>
       </MapContainer>
   );

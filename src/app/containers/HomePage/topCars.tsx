@@ -16,39 +16,15 @@ import EssayModule from "../../../assets/images2/EssayModuleNov21.jpg";
 
 const TopCarsContainer = styled.div`
   ${tw`
-        // max-w-screen-2xl
+        max-w-screen-xl
         w-full
-        flex
-        flex-col
-        items-center
-        justify-center
-        pr-4
-        pl-4
-        md:pl-0
-        md:pr-0
-        bg-blue-50
-        md:mt-7
-    `};
-`;
-
-const Title = styled.h2`
-  ${tw`
-        text-center
-        text-3xl
-        lg:text-5xl
-        text-black
-        font-extrabold
     `};
 `;
 
 const CarsContainer = styled.div`
   ${tw`
         w-full
-        flex
-        flex-wrap
-        justify-center
-        mt-7
-        // md:mt-10
+        mt-9
 
     `};
 `;
@@ -74,21 +50,6 @@ export function CoursesHomepage() {
       thumbnailSrc={EssayModule}
       info="Targeting for 2022 Prelim attempt ? Then this specially customized course is for you."
     />,
-    <CourseHomepage
-      name="Pareekshan 2.0"
-      thumbnailSrc={Pareekshan2}
-      info="Fast track version of 1.0. Those who have already given at-least one attempt at prelims should join this course."
-    />,
-    <CourseHomepage
-      name="Ethics Module"
-      thumbnailSrc={Pareekshan2}
-      info="Special Module for GS 4 Paper"
-    />,
-    <CourseHomepage
-      name="MCQ : All Your Round"
-      thumbnailSrc={Pareekshan2}
-      info="Prelims is a big hurdles for many. Solve Daily 10 MCQs with us."
-    />,
   ];
 
   const numberOfDots = isMobile
@@ -103,7 +64,7 @@ export function CoursesHomepage() {
           onChange={setCurrent}
           slides={HomeCourses}
           plugins={[
-            "centered",
+            "infinite",
             "clickToChange",
             {
               resolve: slidesToShowPlugin,
@@ -115,8 +76,8 @@ export function CoursesHomepage() {
               resolve: autoplayPlugin,
               options: {
                 interval: 2000,
-              }
-            }
+              },
+            },
           ]}
           animationSpeed={1000}
           breakpoints={{

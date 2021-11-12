@@ -11,24 +11,18 @@ interface ICarProps extends ICar {}
 
 const CarContainer = styled.div`
   width: 80%;
-  // min-height: 33.2em;
-  // max-height: 33.2em;
   box-shadow: 0 1.3px 17px -2px rgba(0, 0, 0, 0.4);
   ${tw`
         h-96
-        md:h-[595px]
-        lg:h-[712px]
-        flex
-        flex-col
-        items-center
-        justify-center
+        md:h-[495px]
+        lg:h-[535px]
         p-3
         pb-4
         bg-gray-50
         rounded-md
-        m-1
-        sm:m-3
-        md:m-6
+          m-1
+          sm:m-3
+          // md:m-6
     `};
 `;
 
@@ -36,53 +30,33 @@ const CarThumbnail = styled.div`
   widht: 100%;
   height: auto;
 
-
   img {
     width: 100%;
     height: 22.7em;
+    border: "1px solid gray"
   }
 
   @media (min-width: ${SCREENS.md}) {
     img {
-      width: 70%;
-      height: 31.9  em;
+      width: 90%;
+      height: 24.9  em;
       margin-left:auto;
     margin-right:auto;
 }
 @media (min-width: ${SCREENS.lg}) {
   img {
-    width: 70%;
-    height: 42.8em;
+    width: 90%;
+    height: 31.8em;
     margin-left:auto;
     margin-right:auto;
   }
 }
 @media (min-width: ${SCREENS["2xl"]}) {
-    height:43em;
+    height:35em;
     width: 100%;
     margin-left:auto;
     margin-right:auto;
 }
-
-`;
-
-
-const PricesContainer = styled.div`
-  ${tw`
-        w-full
-        flex
-        justify-start
-        mt-3
-    `};
-`;
-
-const SmallText = styled.p`
-  color: inherit;
-  font-size: 11px;
-  ${tw`
-        inline-flex
-        font-thin
-    `};
 `;
 
 export function CourseHomepage(props: ICarProps) {
@@ -93,13 +67,6 @@ export function CourseHomepage(props: ICarProps) {
       <CarThumbnail>
         <img src={thumbnailSrc} />
       </CarThumbnail>
-      {/* <CarName>{name}</CarName>
-      <PricesContainer>
-        <SmallText>
-          {info}
-        </SmallText>
-      </PricesContainer> */}
-   
     </CarContainer>
   );
 }

@@ -20,6 +20,8 @@ overflow-x-hidden
 export function PreviousQuestions () {
     return <PageContainer>
         <NavBar/>
+        <Marginer direction="vertical" margin="2em"/>
+
         <PrelimsPYQ/>
         <Marginer direction="vertical" margin="3em"/>
         <MainsUPSC/>

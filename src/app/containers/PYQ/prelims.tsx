@@ -7,6 +7,7 @@ import { faFilePdf } from "@fortawesome/free-regular-svg-icons";
 
 const SectionContainer = styled.div`
   ${tw`
+  max-w-screen-2xl
 w-full
 flex
 flex-col
@@ -24,20 +25,20 @@ const ListContainer = styled.ul`
   md:flex-row
   mb-7
   list-none
+  items-center
+  justify-center
         `};
 `;
 
 const NavItem = styled.li<{ menu?: any }>`
   ${tw`
-    md: w-1/12
         
     text-xs
     text-blue-600
     font-medium
-    mr-1
-    ml-1
-    md: mr-20
+    m-1
     md: ml-2
+    md:mr-2
     md: text-base
     cursor-pointer
     transition
@@ -65,7 +66,7 @@ const Title = styled.h1`
 const Heading = styled.h1`
   ${tw`
         w-full
-        md:w-1/2
+        md:w-1/3
         text-center
         text-black
         text-xl
@@ -87,12 +88,12 @@ const StepIcon = styled.span`
 const StepContainer = styled.div`
   ${tw`
         flex
-        items-center
-        justify-center
-        whitespace-nowrap
         transition-colors
         hover:text-red-500
         shadow-lg
+        pl-2
+        pr-2
+        m-1
 
     `};
 `;
@@ -113,8 +114,7 @@ export function PrelimsPYQ() {
               </StepIcon>
               <NavItem>
                 <a href={el.urlPaperI} target="_blank">
-                  {" "}
-                  {el.headerI}{" "}
+                  {el.headerI}
                 </a>
               </NavItem>
             </StepContainer>
@@ -125,8 +125,7 @@ export function PrelimsPYQ() {
               </StepIcon>
               <NavItem>
                 <a href={el.urlPaperII} target="_blank">
-                  {" "}
-                  {el.headerII}{" "}
+                  {el.headerII}
                 </a>
               </NavItem>
             </StepContainer>
