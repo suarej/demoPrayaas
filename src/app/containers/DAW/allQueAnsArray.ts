@@ -372,5 +372,11 @@ export const allQueAndComponentArray= [
     {
         Day : "Day93",
         Question : "Young people with ethical conduct are not willing to come forward to join active politics. Suggest steps to motivate them to come forward. 10 Marks. 150 Words",
-    }
+    },
+    {
+        Day : "Day94",
+        Question : "What factors affect the formation of a person’s attitude towards social problems? In our society, contrasting attitudes are prevalent in many social problems. What contrasting attitudes do you notice about the caste system in our society? How do you explain the existence of these contrasting attitudes? 10 Marks. 150 Words"   },
+    {
+        Day : "Day95",
+        Question : "How could social influence and persuasion contribute to the success of Swachh Bharat Abhiyan? 10 Marks. 150 Words"    }
 ]

@@ -84,6 +84,8 @@ import {
   FeedbackDay90,
   FeedbackDay92,
   FeedbackDay93,
+  FeedbackDay94,
+  FeedbackDay95,
   FeedbackDayFive,
   FeedbackDayFour,
   FeedbackDayOne,
@@ -651,6 +653,18 @@ export const allAnsAndFeedback = [
     },
     Day93: {
       Feedback: FeedbackDay93(),
+      modelAnsMarathi: "https://drive.google.com/file/d/1GMlJPTd7aQASrl_vXvFMh__Sr1ougKS9/view?usp=sharing",
+      modelAnsEnglish:
+        "https://drive.google.com/file/d/1WMCTjh8mPuMinsk4UQa9CqpcnB-gK9PA/view?usp=sharing",
+    },
+    Day94: {
+      Feedback: FeedbackDay94(),
+      modelAnsMarathi: "https://drive.google.com/file/d/1GMlJPTd7aQASrl_vXvFMh__Sr1ougKS9/view?usp=sharing",
+      modelAnsEnglish:
+        "https://drive.google.com/file/d/1WMCTjh8mPuMinsk4UQa9CqpcnB-gK9PA/view?usp=sharing",
+    },
+    Day95: {
+      Feedback: FeedbackDay95(),
       modelAnsMarathi: "https://drive.google.com/file/d/1GMlJPTd7aQASrl_vXvFMh__Sr1ougKS9/view?usp=sharing",
       modelAnsEnglish:
         "https://drive.google.com/file/d/1WMCTjh8mPuMinsk4UQa9CqpcnB-gK9PA/view?usp=sharing",
